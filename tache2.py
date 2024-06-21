@@ -28,4 +28,3 @@ def dic1(liste1,liste2):
    return dic    
 liste1 =[1,2,3]    
 liste2 =['nom','prenpm','age']
-reefasrrtte
