@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Demandes en attente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='RR.jpeg') }}"); /* Remplacez par le nom de votre image */
+            background-size: cover; /* Couvre tout l'écran */
+            background-position: center; /* Centre l'image */
+            background-repeat: no-repeat; /* Évite la répétition de l'image */
+            margin: 0; /* Supprime les marges par défaut */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec transparence pour le tableau */
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center; /* Centre le titre */
+            color: #333; /* Couleur du texte */
+        }
+    </style>
+</head>
+<body>
+    <h1>Demandes en attente</h1>
+
+    <table>
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Marque</th>
+              <th>Modèle</th>
+              <th>Prix (€)</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+
+      {% for request in requests %}
+          <tr>
+              <td>{{ loop.index }}</td> <!-- Affiche l'index -->
+              <td>{{ request.name }}</td>
+              <td>{{ request.email }}</td>
+              <td>{{ request.phone }}</td>
+              <td>{{ request.brand }}</td>
+              <td>{{ request.model }}</td>
+              <td>{{ request.price }}</td>
+
+              <!-- Boutons d'approbation -->
+              <!-- Utilisation de loop.index0 pour obtenir l'index -->
+              <td><a href="{{ url_for('approve_request', index=loop.index0) }}">Approuver</a></td> 
+          </tr><hr/>
+      {% endfor %}
+      </tbody>
+
+    </table>
+    <footer> 
+        <a href="{{ url_for('index') }}" class= "button">Accueil</a>
+        <p>© 2024 Phil-Amina</p>
+    </footer>
+
+</body> 
+</html>

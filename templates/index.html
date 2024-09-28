@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Vente de Voitures</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Styles pour la vidéo en arrière-plan */
+        body {
+            margin: 0; /* Enlever les marges du corps */
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif; /* Définir la police de base */
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; /* Garder la largeur à 100% */
+            height: 100%; /* Remplir toute la hauteur */
+            object-fit: cover; /* Couvre tout l'arrière-plan */
+            z-index: -1; /* Mettre la vidéo derrière le contenu */
+        }
+        .content {
+            z-index: 1; /* Mettre le contenu au-dessus de la vidéo */
+            color: white; /* Couleur du texte */
+            text-align: center;
+            position: relative; /* Nécessaire pour le positionnement absolu des éléments enfants */
+            padding: 20px; /* Espacement autour du contenu */
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+            padding: 20px; /* Espacement interne */
+            border-radius: 10px; /* Coins arrondis */
+        }
+        .nav {
+            text-align:center;
+            margin-top: 20px; /* Espacement au-dessus du menu */
+        }
+        .button {
+            display: inline-block; /* Afficher les boutons en ligne */
+            margin: 10px; /* Espacement entre les boutons */
+            padding: 10px 20px; /* Espacement interne des boutons */
+            background-color: #28a745; /* Couleur verte pour les boutons */
+            color: white; /* Couleur du texte des boutons */
+            text-decoration: none; /* Pas de soulignement sur les liens */
+            border-radius: 5px; /* Coins arrondis pour les boutons */
+        }
+        .button:hover {
+            background-color: #218838; /* Couleur plus foncée au survol */
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre du texte */
+        }
+        h2, h3 {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Ombre légère pour h2 et h3 */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white; /* Couleur du texte dans le footer */
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
+
+    <div class="content overlay"> <!-- Ajout de la classe overlay -->
+        <h1>Bienvenue sur notre site de vente de voitures</h1>
+        <h2>Vendre votre voiture n'a jamais été aussi simple !</h2>
+        
+        <!-- Description ajoutée ici -->
+        <p>Chez <strong>AutodealHub</strong>, nous comprenons que vendre ou acheter une voiture peut être un processus stressant. C'est pourquoi nous avons créé une plateforme simple, sécurisée et efficace pour faciliter chaque étape de votre expérience automobile.</p>
+        
+        <p><strong>Pourquoi Choisir AutodealHub ?</strong></p>
+        
+        <ul style="list-style-type:none; padding-left:0;">
+          <li><strong>Facilité d'Utilisation</strong> : Créez votre annonce en quelques minutes grâce à notre interface conviviale.</li>
+          <li><strong>Visibilité Maximale</strong> : Votre annonce sera vue par des milliers d'acheteurs potentiels.</li>
+          <li><strong>Sécurité et Confiance</strong> : Toutes les transactions sont sécurisées.</li>
+          <li><strong>Assistance Personnalisée</strong> : Notre équipe est là pour vous accompagner à chaque étape.</li>
+        </ul>
+
+        <p><strong>Ne Perdez Pas de Temps !</strong></p>
+        
+        <p>Rejoignez dès aujourd'hui notre communauté croissante de vendeurs et d'acheteurs. Que vous souhaitiez vendre votre voiture ou en acheter une nouvelle, <strong>AutodealHub</strong> est là pour vous aider à chaque étape du chemin.</p>
+
+    </div>
+
+    <div class="nav">
+        <a href="/request" class="button">Soumettre une demande de vente</a>
+        <a href="/vehicles" class="button">Voir les véhicules disponibles</a>
+        <a href="/login" class="button">Connexion Admin</a>
+    </div>
+
+    <footer> 
+        <p>© 2024 Phil-Amina</p>
+    </footer>
+</body>
+</html>

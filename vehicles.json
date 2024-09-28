@@ -1,0 +1,41 @@
+[
+    {
+        "name": "phil",
+        "email": "kubuyaphilemon4@gmail.com",
+        "identity_photo": "images (1).jpg",
+        "phone": "+221786319565",
+        "brand": "Peugeot ",
+        "model": "3008",
+        "price": "7500",
+        "car_photos": [
+            "peugeotex.jpg",
+            "peugeot int.jpg"
+        ]
+    },
+    {
+        "name": "AMINA",
+        "email": "AMINA@gmail.com",
+        "identity_photo": "CBCEDEAO1.jpg",
+        "phone": "+221784325643",
+        "brand": "mercedes",
+        "model": "AMG ",
+        "price": "40000",
+        "car_photos": [
+            "CLE53ex.jpg",
+            "CLE53 INT.webp"
+        ]
+    },
+    {
+        "name": "Martin ",
+        "email": "martin@gmail.com",
+        "identity_photo": "piece 3.jpg",
+        "phone": "+2439924356487",
+        "brand": "Audi",
+        "model": "rs6",
+        "price": "49997",
+        "car_photos": [
+            "rs6 ext.jpg",
+            "rs6 int.jpg"
+        ]
+    }
+]

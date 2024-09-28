@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Arsene",
+        "email": "arnsene@gmail.com",
+        "identity_photo": "piece4.jpg",
+        "phone": "+221786315466",
+        "brand": "range rover",
+        "model": "evoque",
+        "price": "21000",
+        "car_photos": [
+            "range rover ext.jpg",
+            "Range-Rover-Evoque-design-interieur.jpg"
+        ]
+    },
+    {
+        "name": "Diallo",
+        "email": "diallo@gmail.com",
+        "identity_photo": "piece 5.jpg",
+        "phone": "+221787325463",
+        "brand": "hyundai",
+        "model": "tucson",
+        "price": "9999",
+        "car_photos": [
+            "hyundai tucson ext.jpg",
+            "hyundai int.jpg"
+        ]
+    }
+]

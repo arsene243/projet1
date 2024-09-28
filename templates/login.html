@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images (1).jpg') }}"); /* Image de fond */
+            background-size: cover; /* Couvre tout l'écran */
+            background-position: center; /* Centre l'image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; /* Supprime les marges par défaut */
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Fond blanc avec transparence */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745; /* Couleur verte */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Connexion à l'Admin</h2>
+        <form action="/login" method="post">
+            Email: <input type="email" name="email" required><br>
+            Mot de passe: <input type="password" name="password" required><br>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+    <footer> 
+        <a href="{{ url_for('index') }}" class="button">Accueil</a>
+        <p>© 2024 Phil-Amina</p>
+    </footer>
+</body>
+
+</html>

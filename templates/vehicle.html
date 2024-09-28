@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Véhicules Disponibles - Vente de Voitures</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{{ url_for("static", filename="photo.jpeg") }}'); /* Chemin vers l'image de fond */
+            background-size: cover; /* Couvrir tout l'arrière-plan */
+            background-position: center; /* Centrer l'image */
+            margin: 0;
+            padding: 20px;
+            color: #000000; /* Couleur du texte */
+        }
+        h1 {
+            text-align: center; /* Centrer le titre */
+            color:#9E9E9E; /* Couleur blanche pour le titre */
+        }
+        table {
+            width: 100%; /* Largeur du tableau */
+            border-collapse: collapse; /* Fusionner les bordures */
+            margin-top: 20px; /* Espacement au-dessus du tableau */
+            background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec transparence pour le tableau */
+            border-radius: 10px; /* Coins arrondis pour le tableau */
+            overflow: hidden; /* Pour éviter les débordements des coins arrondis */
+        }
+        th, td {
+            border: 1px solid #ccc; /* Bordure grise pour les cellules */
+            padding: 10px; /* Espacement interne */
+            text-align: left; /* Alignement à gauche du texte */
+        }
+        th {
+            background-color:#f2f2f2; /* Fond noir pour les en-têtes */
+        }
+        .vehicle img {
+            max-width: 40px; /* Limiter la taille des images à 40 pixels de hauteur */
+            height: auto; /* Maintenir le ratio d'aspect */
+            border-radius: 5px; /* Coins arrondis pour les images */
+        }
+        .contact-info {
+            font-weight: bold; /* Mettre en gras le numéro de téléphone */
+            color: #28a745; /* Couleur verte pour le numéro de téléphone */
+        }
+    </style>
+</head>
+<body>
+    <h1>Véhicules Disponibles à la Vente</h1>
+
+    <table>
+      <thead>
+          <tr>
+              <th>Marque</th>
+              <th>Modèle</th>
+              <th>Prix (€)</th>
+              <th>Photos</th>
+              <th>Téléphone du Vendeur</th>
+          </tr>
+      </thead>
+      <tbody>
+
+      {% for vehicle in vehicles %}
+          <tr>
+              <td>{{ vehicle.brand }}</td>
+              <td>{{ vehicle.model }}</td>
+              <td>{{ vehicle.price }} €</td>
+
+              <!-- Afficher les photos -->
+              <td>
+                  {% for photo in vehicle.car_photos %}
+                      <img src="{{ url_for('static', filename='uploads/' + photo) }}" alt="Photo de la voiture">
+                  {% endfor %}
+              </td>
+
+              <!-- Affichage du numéro du vendeur -->
+              <td class="contact-info">{{ vehicle.phone }}</td>
+          </tr>
+      {% endfor %}
+      </tbody>
+
+    </table>
+    <footer> 
+        <a href="{{ url_for('index') }}" class="button">Accueil</a>
+        <p>© 2024 Phil-Amina</p>
+    </footer>
+</body>
+</html>
